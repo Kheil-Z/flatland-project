@@ -1,0 +1,15 @@
+We tried different methods (see evolutionary_methods.py) and settled for a genetic algorithm.
+We also tweaked the network a tad.
+- 1 elite + tournament selection ( 3 indivs)
+- Uniform crossover and mutation
+- 10 indivs, 100 gens
+- Default (Xavier) Initialisation of first population
+- A sinusoidal decay of the mutation rate which helped for constant fitness loops
+- Somewhat of a transfer learning: Start on small map,  move to large map.
+    First few generations in the log have good fitness values,
+    they should not be considered as they are on the small map.
+    (wasn't sure if we could bypass the 1000 evals rule to log the appropriate results
+    on large map even if we are not using them..)
+- Mean fit:  -353.0
+Weights are in large.weights, run "python evolution.py --env large  --weights large.weights"
+
